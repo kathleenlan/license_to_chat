@@ -1,5 +1,8 @@
 class LicensePlate < ActiveRecord::Base
-  belongs_to :jurisdiction
+  validates :identifier, presence: true
+  validates :jurisdiction, presence: true
 
-  has_many :comments
+  belongs_to :jurisdiction, inverse_of: :license_plates
+
+  has_many :comments, inverse_of: :license_plate
 end
