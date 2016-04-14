@@ -17,18 +17,25 @@ ActiveRecord::Schema.define(version: 20160102041657) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text    "message"
-    t.integer "license_plate_id"
+    t.text     "message",          null: false
+    t.integer  "license_plate_id", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "comments", ["license_plate_id"], name: "index_comments_on_license_plate_id", using: :btree
 
   create_table "jurisdictions", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "license_plates", force: :cascade do |t|
-    t.string  "identifier"
-    t.integer "jurisdiction_id"
+    t.string   "identifier",      null: false
+    t.integer  "jurisdiction_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "license_plates", ["jurisdiction_id"], name: "index_license_plates_on_jurisdiction_id", using: :btree
