@@ -5,9 +5,9 @@ gem 'rails', '4.2.4'
 gem 'pg'
 
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.5'
 gem 'sass-rails', '~> 5.0'
-gem 'semantic-ui-sass'
+gem 'semantic-ui-sass', '~> 2.1.8.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
