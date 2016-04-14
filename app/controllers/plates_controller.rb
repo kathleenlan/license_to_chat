@@ -1,2 +1,0 @@
-class PlatesController < ApplicationController
-end

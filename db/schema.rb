@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(version: 20160102041657) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "message"
-    t.integer "plate_id"
+    t.integer "license_plate_id"
   end
 
-  add_index "comments", ["plate_id"], name: "index_comments_on_plate_id", using: :btree
+  add_index "comments", ["license_plate_id"], name: "index_comments_on_license_plate_id", using: :btree
 
   create_table "jurisdictions", force: :cascade do |t|
   end
 
-  create_table "plates", force: :cascade do |t|
+  create_table "license_plates", force: :cascade do |t|
     t.string  "identifier"
     t.integer "jurisdiction_id"
   end
 
-  add_index "plates", ["jurisdiction_id"], name: "index_plates_on_jurisdiction_id", using: :btree
+  add_index "license_plates", ["jurisdiction_id"], name: "index_license_plates_on_jurisdiction_id", using: :btree
 
 end
