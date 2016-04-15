@@ -9,7 +9,7 @@ when a new comment is added.
 The motivation behind this application is to provide a means for people to
 communicate with other people about their vehicles (e.g. about maintenance
 issues such as 'Your tire looks flat!' or 'Your tail light is broken!')
-when direct communication is not possible (e.g. when the target vehicle is 
+when direct communication is not possible (e.g. when the target vehicle is
 parked and the owner is not around or when the target vehicle is in motion).
 
 ## Database creation and configuration
@@ -24,7 +24,7 @@ In a terminal, run the following command in the project directory to create the
 database:
 
 ```
-bundle exec rake db:create 
+bundle exec rake db:create
 ```
 
 Migrations can be run with the following command:
@@ -34,3 +34,11 @@ bundle exec rake db:migrate
 ```
 
 ## Running the test suite
+
+Run the following in the root directory of the project:
+
+```
+bundle exec rake
+```
+
+The default rake task is configured to run rubocop as well.
