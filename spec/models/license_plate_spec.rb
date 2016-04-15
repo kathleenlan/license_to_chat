@@ -39,4 +39,32 @@ describe LicensePlate do
     it { is_expected.to validate_presence_of(:identifier) }
     it { is_expected.to validate_presence_of(:jurisdiction) }
   end
+
+  describe '#identifier_and_jurisdiction' do
+    let(:identifier) do
+      'ABC-1234'
+    end
+    let(:jurisdiction) do
+      instance_double(
+        'Jurisdiction',
+        to_s: jurisdiction_name
+      )
+    end
+    let(:jurisdiction_name) do
+      'North Carolina, U.S.A.'
+    end
+
+    subject do
+      described_class.new(identifier: identifier)
+    end
+
+    before do
+      allow(subject).to receive(:jurisdiction).and_return jurisdiction
+    end
+
+    it 'returns a string concatenation of the identifier and jurisdiction' do
+      expected_string = "#{identifier} - #{jurisdiction_name}"
+      expect(subject.identifier_and_jurisdiction).to eql expected_string
+    end
+  end
 end

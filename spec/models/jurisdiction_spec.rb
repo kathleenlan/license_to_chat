@@ -27,4 +27,26 @@ describe Jurisdiction do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
   end
+
+  describe '#to_s' do
+    context 'when the name is nil' do
+      subject { described_class.new(name: nil) }
+
+      it 'returns an empty string' do
+        expect(subject.to_s).to eql ''
+      end
+    end
+
+    context 'when the name is not nil' do
+      let(:name) do
+        'North Carolina, U.S.A.'
+      end
+
+      subject { described_class.new(name: name) }
+
+      it 'returns the name' do
+        expect(subject.to_s).to eql name
+      end
+    end
+  end
 end

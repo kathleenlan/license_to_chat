@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LicenseToChat</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>LicenseToChat</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div class="ui container">
+      <div class="ui attached stackable menu">
+        <div class="ui container">
+          <%= link_to "License to Chat", license_plates_path, class: "item" %>
+        </div>
+      </div>
 
-</body>
+      <%= yield %>
+    </div>
+
+  </body>
 </html>

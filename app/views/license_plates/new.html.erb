@@ -1,0 +1,14 @@
+<h1>New License Plate</h1>
+
+<%= form_for @license_plate, class: "ui form" do |f| %>
+  <div class="required field">
+    <%= f.label :jurisdiction_id %>
+    <%= f.select :jurisdiction_id, options_for_select(Jurisdiction.pluck :name, :id), include_blank: true %>
+  </div>
+  <div class="required field">
+    <%= f.label :identifier, 'License Plate Number' %>
+    <%= f.text_field :identifier %>
+  </div>
+
+  <%= f.submit "Save", class: "ui positive button" %>
+<% end %>
