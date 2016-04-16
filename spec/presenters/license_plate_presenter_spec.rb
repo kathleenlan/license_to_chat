@@ -17,17 +17,14 @@ describe LicensePlatePresenter do
   let(:comments) do
     double(
       'ActiveRecord::Relation',
-      reverse_chronological_order: [comment_1, comment_2, comment_3]
+      reverse_chronological_order: [comment_1, comment_2, comment_3],
+      build: new_comment
     )
   end
-  let(:jurisdiction) do
+  let(:new_comment) do
     instance_double(
-      'Jurisdiction',
-      to_s: jurisdiction_name
+      'Comment'
     )
-  end
-  let(:jurisdiction_name) do
-    'North Carolina, U.S.A.'
   end
   let(:comment_1) do
     instance_double 'Comment'
@@ -46,6 +43,15 @@ describe LicensePlatePresenter do
   end
   let(:comment_presenter_3) do
     instance_double 'Comment'
+  end
+  let(:jurisdiction) do
+    instance_double(
+      'Jurisdiction',
+      to_s: jurisdiction_name
+    )
+  end
+  let(:jurisdiction_name) do
+    'North Carolina, U.S.A.'
   end
 
   subject do
@@ -73,6 +79,23 @@ describe LicensePlatePresenter do
         comment_presenter_3
       ]
       expect(subject.comments).to match_array expected_array
+    end
+  end
+
+  describe '#new_comment' do
+    let(:new_comment_presenter) do
+      instance_double(
+        'CommentPresenter'
+      )
+    end
+
+    before do
+      allow(CommentPresenter).to receive(:new).with(new_comment)
+        .and_return new_comment_presenter
+    end
+
+    it 'returns a CommentPresenter for a new comment' do
+      expect(subject.new_comment).to eql new_comment_presenter
     end
   end
 end

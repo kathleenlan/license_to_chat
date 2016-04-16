@@ -1,8 +1,11 @@
 # encoding: utf-8
 # frozen_string_literal: true
 require 'rails_helper'
+require 'support/shared_examples/models_with_errors'
 
 describe LicensePlate do
+  it_behaves_like 'a model that captures errors'
+
   describe 'db columns and indices' do
     it do
       is_expected.to have_db_column(:identifier).of_type(:string)

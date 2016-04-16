@@ -12,4 +12,8 @@ class LicensePlatePresenter < SimpleDelegator
       CommentPresenter.new(comment)
     end
   end
+
+  def new_comment
+    CommentPresenter.new(license_plate.comments.build)
+  end
 end
