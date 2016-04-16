@@ -21,8 +21,12 @@ class LicensePlatesController < ApplicationController
 
   # TODO: Add redirect and error message if LicensePlate cannot be found
   def show
-    license_plate = LicensePlate.find(license_plate_id)
-    @license_plate = LicensePlatePresenter.new(license_plate)
+    license_plate = LicensePlate.find_by(id: license_plate_id)
+    if license_plate
+      @license_plate = LicensePlatePresenter.new(license_plate)
+    else
+      handle_record_not_found('License plate')
+    end
   end
 
   def edit
