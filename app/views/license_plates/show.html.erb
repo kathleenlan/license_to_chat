@@ -1,1 +1,21 @@
-<h1><%= @license_plate.identifier_and_jurisdiction %></h1>
+<h1><%= @license_plate %></h1>
+
+<% if @license_plate.comments %>
+  <div class="ui comments">
+    <% @license_plate.comments.each do |comment| %>
+      <div class="comment">
+        <div class="content">
+          <div class="metadata">
+            <span class="date"><%= comment.created_at %></span>
+          </div>
+
+          <div class="text">
+            <%= comment.message %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  This license plate does not have any comments yet.
+<% end %>
