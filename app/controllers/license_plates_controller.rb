@@ -21,7 +21,7 @@ class LicensePlatesController < ApplicationController
 
   # TODO: Add redirect and error message if LicensePlate cannot be found
   def show
-    license_plate = LicensePlate.find_by(id: license_plate_id)
+    license_plate = LicensePlate.find_by(id: params[:id])
     if license_plate
       @license_plate = LicensePlatePresenter.new(license_plate)
     else
@@ -33,10 +33,6 @@ class LicensePlatesController < ApplicationController
   end
 
   def update
-  end
-
-  private def license_plate_id
-    params.require(:id)
   end
 
   private def permitted_params
