@@ -3,7 +3,7 @@
 <%= form_for @license_plate, class: "ui form" do |f| %>
   <div class="required field">
     <%= f.label :jurisdiction_id %>
-    <%= f.select :jurisdiction_id, options_for_select(Jurisdiction.pluck :name, :id), include_blank: true %>
+    <%= f.select :jurisdiction_id, @license_plate.jurisdiction_options_for_select, include_blank: true, class: "ui fluid dropdown" %>
   </div>
   <div class="required field">
     <%= f.label :identifier, 'License Plate Number' %>

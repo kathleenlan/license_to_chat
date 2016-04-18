@@ -74,6 +74,22 @@ describe LicensePlatePresenter do
     end
   end
 
+  describe '#jurisdiction_options' do
+    let(:jurisdiction_names_and_ids) do
+      instance_double 'Array'
+    end
+
+    before do
+      allow(Jurisdiction).to receive(:pluck).with(:name, :id)
+        .and_return jurisdiction_names_and_ids
+    end
+
+    it 'returns a multidimensional array with the name and id of each '\
+      'Jurisdiction' do
+      expect(subject.jurisdiction_options).to eql jurisdiction_names_and_ids
+    end
+  end
+
   describe '#comments' do
     it 'returns a collection of CommentPresenters in reverse chronological '\
       'order' do

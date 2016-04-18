@@ -33,7 +33,10 @@ describe LicensePlatesController do
       )
     end
     let(:new_license_plate) do
-      instance_double 'LicensePlate'
+      instance_double(
+        'LicensePlate',
+        formatted_errors: 'Something went wrong!'
+      )
     end
 
     before do
@@ -58,6 +61,9 @@ describe LicensePlatesController do
       it 'redirects to the show page' do
         is_expected.to redirect_to(license_plate_path(new_license_plate))
       end
+      it 'sets a flash success message' do
+        is_expected.to set_flash[:info]
+      end
     end
 
     context 'when the license plate is not saved successfully' do
@@ -77,6 +83,9 @@ describe LicensePlatesController do
       end
       it 'renders the new template' do
         is_expected.to render_template('new')
+      end
+      it 'sets a flash error message' do
+        is_expected.to set_flash.now[:error]
       end
     end
   end

@@ -6,15 +6,19 @@ class LicensePlatesController < ApplicationController
   end
 
   def new
-    @license_plate = LicensePlate.new
+    license_plate = LicensePlate.new
+    @license_plate = LicensePlatePresenter.new(license_plate)
   end
 
   def create
-    @license_plate = LicensePlate.new(permitted_params)
-    if @license_plate.save
-      redirect_to license_plate_path(@license_plate)
+    license_plate = LicensePlate.new(permitted_params)
+    if license_plate.save
+      flash[:info] = 'License plate added successfully!'
+      redirect_to license_plate_path(license_plate)
     else
-      # TODO: set flash messages
+      flash.now[:error] = 'Unable to save license plate. '\
+        "#{license_plate.formatted_errors}"
+      @license_plate = LicensePlatePresenter.new(license_plate)
       render 'new'
     end
   end
