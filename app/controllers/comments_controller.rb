@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
 
   private def comment_params
     params.require(:comment).permit(
-      :id,
       :license_plate_id,
       :message
     )
