@@ -4,9 +4,9 @@
   <%= link_to "Add a license plate", new_license_plate_path, class: "ui positive right floated button" %>
 </div>
 
-<div class="index-listing">
+<div class="index-listing" data-container="license-plates">
   <%= @license_plates.find_each do |plate| %>
-    <div class="ui segment">
+    <div class="ui segment license-plate" data-link-to=<%= license_plate_path(plate) %>>
       <%= plate.identifier %>
     </div>
   <% end %>

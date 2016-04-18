@@ -10,3 +10,9 @@
   clear: both;
   margin-top: 1em;
 }
+
+.license-plate {
+  &:hover {
+    cursor: pointer;
+  }
+}
