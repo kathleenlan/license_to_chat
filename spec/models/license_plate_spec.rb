@@ -42,4 +42,24 @@ describe LicensePlate do
     it { is_expected.to validate_presence_of(:identifier) }
     it { is_expected.to validate_presence_of(:jurisdiction) }
   end
+
+  describe '#comments_count' do
+    let(:comments) do
+      instance_double(
+        'ActiveRecord::Associations::CollectionProxy',
+        count: comments_count
+      )
+    end
+    let(:comments_count) do
+      93_412
+    end
+
+    before do
+      allow(subject).to receive(:comments).and_return comments
+    end
+
+    it 'returns the number of comments the subject has' do
+      expect(subject.comments_count).to eql comments_count
+    end
+  end
 end

@@ -16,4 +16,8 @@ class LicensePlatePresenter < SimpleDelegator
   def new_comment
     CommentPresenter.new(license_plate.comments.build)
   end
+
+  def comments_count
+    license_plate.comments_count
+  end
 end

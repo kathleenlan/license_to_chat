@@ -8,6 +8,7 @@ describe LicensePlatePresenter do
       'LicensePlate',
       identifier: identifier,
       comments: comments,
+      comments_count: comments_count,
       jurisdiction: jurisdiction
     )
   end
@@ -43,6 +44,9 @@ describe LicensePlatePresenter do
   end
   let(:comment_presenter_3) do
     instance_double 'Comment'
+  end
+  let(:comments_count) do
+    125
   end
   let(:jurisdiction) do
     instance_double(
@@ -96,6 +100,12 @@ describe LicensePlatePresenter do
 
     it 'returns a CommentPresenter for a new comment' do
       expect(subject.new_comment).to eql new_comment_presenter
+    end
+  end
+
+  describe '#comments_count' do
+    it 'returns the count of the license plate\'s comments' do
+      expect(subject.comments_count).to eql comments_count
     end
   end
 end

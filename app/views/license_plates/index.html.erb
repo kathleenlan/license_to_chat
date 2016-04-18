@@ -7,7 +7,17 @@
 <div class="index-listing" data-container="license-plates">
   <%= @license_plates.find_each do |plate| %>
     <div class="ui segment license-plate" data-link-to=<%= license_plate_path(plate) %>>
-      <%= plate.identifier %>
+      <span class="license-plate-identifier">
+        <%= plate.identifier %>
+      </span>
+      <div class="ui tiny statistic">
+        <div class="value">
+          <%= plate.comments_count %>
+        </div>
+        <div class="label">
+          Comments
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

@@ -9,4 +9,8 @@ class LicensePlate < ActiveRecord::Base
   belongs_to :jurisdiction, inverse_of: :license_plates
 
   has_many :comments, inverse_of: :license_plate
+
+  def comments_count
+    comments.count
+  end
 end
