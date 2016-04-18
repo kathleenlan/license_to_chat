@@ -42,3 +42,18 @@ bundle exec rake
 ```
 
 The default rake task is configured to run rubocop as well.
+
+## TODOs
+
+* Add seeds for jurisdictions
+
+* Add license plate format validators (valid formats will vary based on
+  jurisdiction)
+
+* Add authentication and a User model (the plan is to allow anyone to view all
+  of the application content without logging in but to require users to log in
+  to add content
+
+* Add a search functionality
+
+* Improve the overall styling and add a logo
