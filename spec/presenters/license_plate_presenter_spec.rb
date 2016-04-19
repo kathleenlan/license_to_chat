@@ -9,6 +9,7 @@ describe LicensePlatePresenter do
       identifier: identifier,
       comments: comments,
       comments_count: comments_count,
+      most_recent_comment: most_recent_comment,
       jurisdiction: jurisdiction
     )
   end
@@ -47,6 +48,9 @@ describe LicensePlatePresenter do
   end
   let(:comments_count) do
     125
+  end
+  let(:most_recent_comment) do
+    comment_1
   end
   let(:jurisdiction) do
     instance_double(
@@ -122,6 +126,78 @@ describe LicensePlatePresenter do
   describe '#comments_count' do
     it 'returns the count of the license plate\'s comments' do
       expect(subject.comments_count).to eql comments_count
+    end
+  end
+
+  describe '#most_recent_comment_preview' do
+    context 'when the license plate does have a most recent comment' do
+      let(:most_recent_comment) do
+        comment_1
+      end
+      let(:most_recent_comment_presenter) do
+        instance_double(
+          'CommentPresenter',
+          message_preview: message_preview
+        )
+      end
+      let(:message_preview) do
+        'A humble message.'
+      end
+
+      before do
+        allow(CommentPresenter).to receive(:new).with(comment_1)
+          .and_return most_recent_comment_presenter
+      end
+
+      it 'delegates to a CommentPresenter for the most recent comment' do
+        expect(subject.most_recent_comment_preview).to eql message_preview
+      end
+    end
+
+    context 'when the license plate does not have a most recent comment' do
+      let(:most_recent_comment) do
+        nil
+      end
+
+      it 'returns an empty string' do
+        expect(subject.most_recent_comment_preview).to eql ''
+      end
+    end
+  end
+
+  describe '#most_recent_comment_timestamp' do
+    context 'when the license plate has a most recent comment' do
+      let(:most_recent_comment) do
+        comment_1
+      end
+      let(:most_recent_comment_presenter) do
+        instance_double(
+          'CommentPresenter',
+          created_at: comment_timestamp
+        )
+      end
+      let(:comment_timestamp) do
+        'February 15, 2016 at 4:15pm'
+      end
+
+      before do
+        allow(CommentPresenter).to receive(:new).with(comment_1)
+          .and_return most_recent_comment_presenter
+      end
+
+      it 'delegates to a CommentPresenter for the most recent comment' do
+        expect(subject.most_recent_comment_timestamp).to eql comment_timestamp
+      end
+    end
+
+    context 'when the license plate does not have a most recent comment' do
+      let(:most_recent_comment) do
+        nil
+      end
+
+      it 'returns an empty string' do
+        expect(subject.most_recent_comment_timestamp).to eql ''
+      end
     end
   end
 end

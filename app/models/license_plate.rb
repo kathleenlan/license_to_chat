@@ -14,4 +14,8 @@ class LicensePlate < ActiveRecord::Base
   def comments_count
     comments.count
   end
+
+  def most_recent_comment
+    comments.reverse_chronological_order.first
+  end
 end

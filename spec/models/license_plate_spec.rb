@@ -75,4 +75,30 @@ describe LicensePlate do
       expect(subject.comments_count).to eql comments_count
     end
   end
+
+  describe '#most_recent_comment' do
+    let(:comments) do
+      double(
+        'ActiveRecord::Associations::CollectionProxy',
+        reverse_chronological_order: ordered_comments
+      )
+    end
+    let(:ordered_comments) do
+      instance_double(
+        'ActiveRecord::AssociationRelation',
+        first: comment
+      )
+    end
+    let(:comment) do
+      instance_double 'Comment'
+    end
+
+    before do
+      allow(subject).to receive(:comments).and_return comments
+    end
+
+    it 'returns the most recently created comment for the license plate' do
+      expect(subject.most_recent_comment).to eql comment
+    end
+  end
 end

@@ -1,8 +1,11 @@
 # encoding: utf-8
 # frozen_string_literal: true
 class LicensePlatesController < ApplicationController
+  # TODO: paginate records
   def index
-    @license_plates = LicensePlate.all
+    @license_plates = LicensePlate.all.map do |plate|
+      LicensePlatePresenter.new(plate)
+    end
   end
 
   def new

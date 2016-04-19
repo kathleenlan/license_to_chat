@@ -30,4 +30,26 @@ class LicensePlatePresenter < SimpleDelegator
   def comments_count
     license_plate.comments_count
   end
+
+  def most_recent_comment_preview
+    most_recent_comment.message_preview
+  end
+
+  def most_recent_comment_timestamp
+    most_recent_comment.created_at
+  end
+
+  private def most_recent_comment
+    @most_recent_comment ||= extract_most_recent_comment
+  end
+
+  private def extract_most_recent_comment
+    if license_plate.most_recent_comment
+      CommentPresenter.new(
+        license_plate.most_recent_comment
+      )
+    else
+      NullCommentPresenter.new
+    end
+  end
 end
