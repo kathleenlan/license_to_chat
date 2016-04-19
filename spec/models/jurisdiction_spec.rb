@@ -28,7 +28,17 @@ describe Jurisdiction do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:name) }
+    describe 'presence validations' do
+      it { is_expected.to validate_presence_of(:name) }
+    end
+
+    describe 'uniqueness validations' do
+      subject do
+        described_class.new(name: 'North Carolina, U.S.A.')
+      end
+
+      it { is_expected.to validate_uniqueness_of(:name) }
+    end
   end
 
   describe '#to_s' do

@@ -3,7 +3,7 @@
 class Jurisdiction < ActiveRecord::Base
   include HasErrors
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   has_many :license_plates, inverse_of: :jurisdiction
 

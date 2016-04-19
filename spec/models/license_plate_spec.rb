@@ -39,8 +39,21 @@ describe LicensePlate do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:identifier) }
-    it { is_expected.to validate_presence_of(:jurisdiction) }
+    describe 'presence validations' do
+      it { is_expected.to validate_presence_of(:identifier) }
+      it { is_expected.to validate_presence_of(:jurisdiction) }
+    end
+
+    describe 'uniqueness validations' do
+      subject do
+        described_class.new(identifier: 'ABC-1234', jurisdiction_id: 2)
+      end
+
+      it do
+        is_expected.to validate_uniqueness_of(:identifier)
+          .scoped_to(:jurisdiction_id)
+      end
+    end
   end
 
   describe '#comments_count' do

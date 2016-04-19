@@ -3,7 +3,8 @@
 class LicensePlate < ActiveRecord::Base
   include HasErrors
 
-  validates :identifier, presence: true
+  validates :identifier, presence: true,
+                         uniqueness: { scope: [:jurisdiction_id] }
   validates :jurisdiction, presence: true
 
   belongs_to :jurisdiction, inverse_of: :license_plates
