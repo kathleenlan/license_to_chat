@@ -17,18 +17,30 @@
   }
   .license-plate-identifier, .jurisdiction {
     margin: 1rem 0rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+    font-size: 1.75rem;
   }
 
   .license-plate-identifier {
-    padding-top: 1rem;
     font-weight: bold;
-    font-size: 2rem;
+    word-wrap: break-word;
   }
 
-  .jurisdiction {
-    padding-top: 1.25rem;
-    font-size: 1.5rem;
+  .license-plate-comments-count {
+    margin: auto;
+  }
+
+  .most-recent-comment-preview {
+    font-size: 1em;
+    padding-top: 0.75em;
+    text-align: center;
+  }
+
+  .most-recent-comment-timestamp {
+    font-family: 'Lato', 'Helvetica Nue', 'Arial', 'Helvetica', 'sans-serif';
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
   }
 }
 
