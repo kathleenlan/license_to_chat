@@ -26,7 +26,6 @@ class LicensePlatesController < ApplicationController
     end
   end
 
-  # TODO: Add redirect and error message if LicensePlate cannot be found
   def show
     license_plate = LicensePlate.find_by(id: params[:id])
     if license_plate
