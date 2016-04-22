@@ -8,9 +8,20 @@ when a new comment is added.
 
 The motivation behind this application is to provide a means for people to
 communicate with other people about their vehicles (e.g. about maintenance
-issues such as 'Your tire looks flat!' or 'Your tail light is broken!')
+issues such as 'Your tire looks flat!' or 'Check your tail lights!')
 when direct communication is not possible (e.g. when the target vehicle is
 parked and the owner is not around or when the target vehicle is in motion).
+
+## Technologies and dependencies
+
+This application uses:
+
+* Ruby 2.2+
+* Ruby on Rails 4.2+ for the web framework
+* Semantic UI for the front-end framework
+* PostgreSQL for the database
+
+See the `Gemfile` for remaining dependencies.
 
 ## Database creation and configuration
 
