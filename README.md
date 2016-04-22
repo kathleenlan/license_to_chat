@@ -56,8 +56,6 @@ The default rake task is configured to run rubocop as well.
 
 ## TODOs
 
-* Add seeds for jurisdictions
-
 * Add license plate format validators (valid formats will vary based on
   jurisdiction)
 
@@ -68,3 +66,5 @@ The default rake task is configured to run rubocop as well.
 * Add a search functionality
 
 * Improve the overall styling and add a logo
+
+* Add internationalization

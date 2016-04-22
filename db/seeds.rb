@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+module Seeds
+  def self.sprout!
+    Dir[path_to_seeds_files].each { |file| require file }
+    Seeds::Jurisdictions.sprout!
+  end
+
+  def self.path_to_seeds_files
+    Rails.root.join('db', 'seeds', '**', '*.rb')
+  end
+  private_class_method :path_to_seeds_files
+end
+
+Seeds.sprout!
