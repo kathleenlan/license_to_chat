@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
-gem 'pg'
+gem 'rails', '~> 4.2.6'
+gem 'pg', '~> 0.18.4'
 
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 4.0.5'
