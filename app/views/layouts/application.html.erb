@@ -7,18 +7,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div class="ui attached stackable menu">
+      <%= link_to "License to Chat", license_plates_path, class: "item" %>
+    </div>
 
     <div class="ui container">
-      <div class="ui attached stackable menu">
-        <div class="ui container">
-          <%= link_to "License to Chat", license_plates_path, class: "item" %>
-        </div>
-      </div>
-
       <%= render partial: 'shared/flash_messages' %>
 
       <%= yield %>
     </div>
-
   </body>
 </html>
