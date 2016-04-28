@@ -1,17 +1,19 @@
 <h1>New License Plate</h1>
 
-<%= form_for @license_plate, class: "ui form" do |f| %>
-  <div class="required field">
-    <%= f.label :jurisdiction_id %>
-    <%= f.select :jurisdiction_id,
-      @license_plate.jurisdiction_options_for_select,
-      { include_blank: true },
-      { class: "ui search dropdown" }
-    %>
-  </div>
-  <div class="required field">
-    <%= f.label :identifier, 'License Plate Number' %>
-    <%= f.text_field :identifier %>
+<%= form_for @license_plate, html: { class: "ui form" } do |f| %>
+  <div class="fields">
+    <div class="required field">
+      <%= f.label :jurisdiction_id %>
+      <%= f.select :jurisdiction_id,
+        @license_plate.jurisdiction_options_for_select,
+        { include_blank: true },
+        { class: "ui search dropdown" }
+      %>
+    </div>
+    <div class="required field">
+      <%= f.label :identifier, 'License Plate Number' %>
+      <%= f.text_field :identifier %>
+    </div>
   </div>
 
   <%= f.submit "Save", class: "ui positive button" %>
