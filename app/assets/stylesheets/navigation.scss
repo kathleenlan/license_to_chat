@@ -1,0 +1,18 @@
+.ui.menu.navigation-menu {
+  background-color: $blue;
+  a, a:link, a:hover, a:visited, a:active {
+    color: $white;
+  }
+}
+
+.homepage-link {
+  font-size: 1.25em;
+  padding: 1em 2em;
+}
+
+.pagination-menu {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  float: right;
+}
+
