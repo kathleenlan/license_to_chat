@@ -22,7 +22,6 @@
   }
 
   .license-plate-identifier {
-    font-weight: bold;
     word-wrap: break-word;
   }
 
@@ -44,7 +43,10 @@
   }
 }
 
-.ui.grid.segment.license-plate, .ui.statistic .value, .ui.statistic .value ~ .label {
-  background-color: $blue;
-  color: $white;
+.ui.grid.segment.license-plate {
+  border: 2px solid $dark-blue;
+  &:hover {
+    border-color: $light-blue;
+    color: $light-blue;
+  }
 }

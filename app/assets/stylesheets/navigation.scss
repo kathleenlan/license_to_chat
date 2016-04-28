@@ -1,5 +1,5 @@
 .ui.menu.navigation-menu {
-  background-color: $blue;
+  background-color: $dark-blue;
   a, a:link, a:hover, a:visited, a:active {
     color: $white;
   }
@@ -10,9 +10,9 @@
   padding: 1em 2em;
 }
 
-.pagination-menu {
+.ui.inverted.pagination.menu {
+  background-color: $dark-blue;
   margin-top: 0.5em;
   margin-bottom: 1em;
   float: right;
 }
-
