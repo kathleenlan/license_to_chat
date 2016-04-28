@@ -5,23 +5,24 @@
 </div>
 
 <div class="index-listing" data-container="license-plates">
-  <% @license_plates.each do |plate| %>
-    <div class="ui grid segment license-plate" data-link-to=<%= license_plate_path(plate) %>>
+  <% @license_plates.each do |license_plate| %>
+    <% plate_presenter = LicensePlatePresenter.new(license_plate) %>
+    <div class="ui grid segment license-plate" data-link-to=<%= license_plate_path(plate_presenter) %>>
       <div class="three wide column">
         <div class="license-plate-identifier">
-          <%= plate.identifier %>
+          <%= plate_presenter.identifier %>
         </div>
       </div>
 
       <div class="four wide column">
         <div class="jurisdiction">
-          <%= plate.jurisdiction %>
+          <%= plate_presenter.jurisdiction %>
         </div>
       </div>
 
       <div class="three wide column ui tiny statistic license-plate-comments-count">
         <div class="value">
-          <%= plate.comments_count %>
+          <%= plate_presenter.comments_count %>
         </div>
         <div class="label">
           Comments
@@ -30,12 +31,15 @@
 
       <div class="six wide column">
         <div class="most-recent-comment-preview">
-          <%= plate.most_recent_comment_preview %>
+          <%= plate_presenter.most_recent_comment_preview %>
         </div>
         <div class="most-recent-comment-timestamp">
-          <%= plate.most_recent_comment_timestamp %>
+          <%= plate_presenter.most_recent_comment_timestamp %>
         </div>
       </div>
     </div>
   <% end %>
+</div>
+<div class="pagination-menu">
+  <%= paginate @license_plates, remote: true %>
 </div>

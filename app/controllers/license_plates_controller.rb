@@ -1,11 +1,8 @@
 # encoding: utf-8
 # frozen_string_literal: true
 class LicensePlatesController < ApplicationController
-  # TODO: paginate records
   def index
-    @license_plates = LicensePlate.all.map do |plate|
-      LicensePlatePresenter.new(plate)
-    end
+    @license_plates = LicensePlate.page(current_page)
   end
 
   def new
@@ -47,5 +44,11 @@ class LicensePlatesController < ApplicationController
       :jurisdiction_id,
       :identifier
     )
+  end
+
+  # Note: If params[:page] is nil, then Kaminari's .page method will default to
+  # retrieving the first page.
+  private def current_page
+    params[:page]
   end
 end
