@@ -11,6 +11,8 @@ class LicensePlate < ActiveRecord::Base
 
   has_many :comments, inverse_of: :license_plate
 
+  scope :ordered, -> { order(created_at: :desc) }
+
   def comments_count
     comments.count
   end

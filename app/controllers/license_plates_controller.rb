@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 class LicensePlatesController < ApplicationController
   def index
-    @license_plates = LicensePlate.page(current_page)
+    @license_plates = LicensePlate.ordered.page(current_page)
   end
 
   def new
