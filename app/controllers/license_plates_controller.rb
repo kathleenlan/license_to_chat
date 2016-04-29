@@ -2,7 +2,8 @@
 # frozen_string_literal: true
 class LicensePlatesController < ApplicationController
   def index
-    @license_plates = LicensePlate.ordered.page(current_page)
+    @q = LicensePlate.ransack(params[:q])
+    @license_plates = @q.result.includes(:comments).ordered.page(current_page)
   end
 
   def new

@@ -1,0 +1,19 @@
+<div class="ui segment">
+  <%= search_form_for @q, html: { class: "ui form" } do |f| %>
+    <div class="fields">
+      <div class="field">
+        <%= f.select :jurisdiction_id_eq,
+          Jurisdiction.pluck(:name, :id),
+          { include_blank: 'Jurisdiction' },
+          { class: "ui search dropdown" }
+        %>
+      </div>
+      <div class="field">
+        <%= f.search_field :identifier_cont, placeholder: 'Plate number' %>
+      </div>
+      <div class="search-button">
+        <%= f.submit class: "ui submit button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

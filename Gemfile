@@ -8,6 +8,7 @@ gem 'pg', '~> 0.18.4'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 4.0.5'
 gem 'kaminari', '~> 0.16.3'
+gem 'ransack'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'semantic-ui-sass', '~> 2.1.8.0'

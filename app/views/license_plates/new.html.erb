@@ -6,13 +6,13 @@
       <%= f.label :jurisdiction_id %>
       <%= f.select :jurisdiction_id,
         @license_plate.jurisdiction_options_for_select,
-        { include_blank: true },
+        { include_blank: 'Jurisdiction' },
         { class: "ui search dropdown" }
       %>
     </div>
     <div class="required field">
       <%= f.label :identifier, 'License Plate Number' %>
-      <%= f.text_field :identifier %>
+      <%= f.text_field :identifier, placeholder: 'Plate number' %>
     </div>
   </div>
 
