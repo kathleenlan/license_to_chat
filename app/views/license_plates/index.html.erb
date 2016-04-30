@@ -1,44 +1,51 @@
 <%= render partial: 'search' %>
+
 <div class="add-button-row">
   <%= link_to new_license_plate_path, class: "ui positive right floated button" do %>
     <i class="add circle icon"></i> Add a license plate
   <% end %>
 </div>
 
-<div class="index-listing" data-container="license-plates">
-  <% @license_plates.each do |license_plate| %>
-    <% plate_presenter = LicensePlatePresenter.new(license_plate) %>
-    <div class="ui grid segment license-plate" data-link-to=<%= license_plate_path(plate_presenter) %>>
-      <div class="three wide column">
-        <div class="license-plate-identifier">
-          <%= plate_presenter.identifier %>
+<% if @license_plates.any? %>
+  <div class="index-listing" data-container="license-plates">
+    <% @license_plates.each do |license_plate| %>
+      <% plate_presenter = LicensePlatePresenter.new(license_plate) %>
+      <div class="ui grid segment license-plate" data-link-to=<%= license_plate_path(plate_presenter) %>>
+        <div class="three wide column">
+          <div class="license-plate-identifier">
+            <%= plate_presenter.identifier %>
+          </div>
         </div>
-      </div>
 
-      <div class="four wide column">
-        <div class="jurisdiction">
-          <%= plate_presenter.jurisdiction %>
+        <div class="four wide column">
+          <div class="jurisdiction">
+            <%= plate_presenter.jurisdiction %>
+          </div>
         </div>
-      </div>
 
-      <div class="three wide column ui tiny statistic license-plate-comments-count">
-        <div class="value">
-          <%= plate_presenter.comments_count %>
+        <div class="three wide column ui tiny statistic license-plate-comments-count">
+          <div class="value">
+            <%= plate_presenter.comments_count %>
+          </div>
+          <div class="label">
+            Comments
+          </div>
         </div>
-        <div class="label">
-          Comments
-        </div>
-      </div>
 
-      <div class="six wide column">
-        <div class="most-recent-comment-preview">
-          <%= plate_presenter.most_recent_comment_preview %>
-        </div>
-        <div class="most-recent-comment-timestamp">
-          <%= plate_presenter.most_recent_comment_timestamp %>
+        <div class="six wide column">
+          <div class="most-recent-comment-preview">
+            <%= plate_presenter.most_recent_comment_preview %>
+          </div>
+          <div class="most-recent-comment-timestamp">
+            <%= plate_presenter.most_recent_comment_timestamp %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-<%= paginate @license_plates, remote: true %>
+    <% end %>
+  </div>
+  <%= paginate @license_plates, remote: true %>
+<% else %>
+  <div class="ui message license-plate-no-results-found-message">
+    No results found. Click the button above to add a new license plate!
+  </div>
+<% end %>
