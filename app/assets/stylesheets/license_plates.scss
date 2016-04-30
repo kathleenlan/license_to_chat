@@ -50,3 +50,16 @@
     color: $light-blue;
   }
 }
+
+.ui.form.license-plate-search-form .fields {
+  .license-plate-jurisdiction-search.field, .license-plate-identifier-search.field {
+    padding-left: 0em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .license-plate-search-button {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}

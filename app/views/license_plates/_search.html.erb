@@ -1,19 +1,17 @@
 <div class="ui segment">
-  <%= search_form_for @q, html: { class: "ui form" } do |f| %>
-    <div class="fields">
-      <div class="field">
+  <%= search_form_for @q, html: { class: "ui form license-plate-search-form" } do |f| %>
+    <div class="equal width fields">
+      <div class="license-plate-jurisdiction-search field">
         <%= f.select :jurisdiction_id_eq,
           Jurisdiction.pluck(:name, :id),
           { include_blank: 'Jurisdiction' },
           { class: "ui search dropdown" }
         %>
       </div>
-      <div class="field">
-        <%= f.search_field :identifier_cont, placeholder: 'Plate number' %>
+      <div class="license-plate-identifier-search field">
+        <%= f.text_field :identifier_cont, placeholder: 'License plate number' %>
       </div>
-      <div class="search-button">
-        <%= f.submit class: "ui submit button" %>
-      </div>
+      <%= f.submit class: "license-plate-search-button ui submit button" %>
     </div>
   <% end %>
 </div>
