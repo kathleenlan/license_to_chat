@@ -44,3 +44,7 @@ group :test do
   gem 'capistrano', '~> 3.5.0'
   gem 'capistrano-rails', '~> 1.1.6'
 end
+
+group :production do
+  gem 'puma', '~> 3.4.0'
+end
