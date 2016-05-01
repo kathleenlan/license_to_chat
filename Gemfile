@@ -27,9 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   gem 'pry'
 end
@@ -44,4 +41,6 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'capistrano', '~> 3.5.0'
+  gem 'capistrano-rails', '~> 1.1.6'
 end
