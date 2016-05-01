@@ -1,5 +1,7 @@
 # license_to_chat
 
+[View demo](https://licensetochat.herokuapp.com/)
+
 This application is a license plate-based message board platform where users can
 post and view messages associated with a given vehicle license plate. Each
 license plate in the system will have a newsfeed of comments written by users.
