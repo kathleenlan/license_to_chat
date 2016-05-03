@@ -1,6 +1,8 @@
 # license_to_chat
 
-[View demo](https://licensetochat.herokuapp.com/)
+[View demo](https://licensetochat.herokuapp.com/) (Note: This application is
+still in the early stages of development. Please see the TODO list below for a
+list of coming features.)
 
 This application is a license plate-based message board platform where users can
 post and view messages associated with a given vehicle license plate. Each
@@ -61,12 +63,16 @@ The default rake task is configured to run rubocop as well.
 * Add license plate format validators (valid formats will vary based on
   jurisdiction)
 
-* Add authentication and a User model (the plan is to allow anyone to view all
+* Add authentication and a User model (The plan is to allow anyone to view all
   of the application content without logging in but to require users to log in
-  to add content
+  to add content.)
 
-* Add a search functionality
+* Allow users to authenticate using Google or Facebook credentials
+
+* Make the search functionality asynchronous
+
+* Add infinite scrolling on the LicensePlate index page to replace pagination
 
 * Improve the overall styling and add a logo
 
-* Add internationalization
+* Add internationalization/localization for different languages
