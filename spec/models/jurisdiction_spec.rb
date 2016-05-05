@@ -19,6 +19,9 @@ describe Jurisdiction do
       is_expected.to have_db_column(:updated_at).of_type(:datetime)
         .with_options(null: false)
     end
+    it do
+      is_expected.to have_db_column(:service_class_basename).of_type(:string)
+    end
   end
 
   describe 'associations' do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419015303) do
+ActiveRecord::Schema.define(version: 20160505232701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20160419015303) do
   add_index "comments", ["license_plate_id"], name: "index_comments_on_license_plate_id", using: :btree
 
   create_table "jurisdictions", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                                        null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.string   "service_class_basename", default: "Standard"
   end
 
   add_index "jurisdictions", ["name"], name: "index_jurisdictions_on_name", unique: true, using: :btree

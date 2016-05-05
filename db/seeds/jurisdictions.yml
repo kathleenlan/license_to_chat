@@ -1,50 +1,100 @@
-- Alabama, U.S.A.
-- Alaska, U.S.A.
-- Arizona, U.S.A.
-- Arkansas, U.S.A.
-- California, U.S.A.
-- Colorado, U.S.A.
-- Connecticut, U.S.A.
-- Delaware, U.S.A.
-- Florida, U.S.A.
-- Georgia, U.S.A.
-- Hawaii, U.S.A.
-- Idaho, U.S.A.
-- Illinois, U.S.A.
-- Indiana, U.S.A.
-- Iowa, U.S.A.
-- Kansas, U.S.A.
-- Kentucky, U.S.A.
-- Louisiana, U.S.A.
-- Maine, U.S.A.
-- Maryland, U.S.A.
-- Massachusetts, U.S.A.
-- Michigan, U.S.A.
-- Minnesota, U.S.A.
-- Mississippi, U.S.A.
-- Missouri, U.S.A.
-- Montana, U.S.A.
-- Nebraska, U.S.A.
-- Nevada, U.S.A.
-- New Hampshire, U.S.A.
-- New Jersey, U.S.A.
-- New Mexico, U.S.A.
-- New York, U.S.A.
-- North Carolina, U.S.A.
-- North Dakota, U.S.A.
-- Ohio, U.S.A.
-- Oklahoma, U.S.A.
-- Oregon, U.S.A.
-- Pennsylvania, U.S.A.
-- Rhode Island, U.S.A.
-- South Carolina, U.S.A.
-- South Dakota, U.S.A.
-- Tennessee, U.S.A.
-- Texas, U.S.A.
-- Utah, U.S.A.
-- Vermont, U.S.A.
-- Virginia, U.S.A.
-- Washington, U.S.A.
-- West Virginia, U.S.A.
-- Wisconsin, U.S.A.
-- Wyoming, U.S.A.
+- name: Alabama, U.S.A.
+  service_class_basename: Alabama
+- name: Alaska, U.S.A.
+  service_class_basename: Alaska
+- name: Arizona, U.S.A.
+  service_class_basename: Arizona
+- name: Arkansas, U.S.A.
+  service_class_basename: Arkansas
+- name: California, U.S.A.
+  service_class_basename: California
+- name: Colorado, U.S.A.
+  service_class_basename: Colorado
+- name: Connecticut, U.S.A.
+  service_class_basename: Connecticut
+- name: Delaware, U.S.A.
+  service_class_basename: Delaware
+- name: Florida, U.S.A.
+  service_class_basename: Florida
+- name: Georgia, U.S.A.
+  service_class_basename: Georgia
+- name: Hawaii, U.S.A.
+  service_class_basename: Hawaii
+- name: Idaho, U.S.A.
+  service_class_basename: Idaho
+- name: Illinois, U.S.A.
+  service_class_basename: Illinois
+- name: Indiana, U.S.A.
+  service_class_basename: Indiana
+- name: Iowa, U.S.A.
+  service_class_basename: Iowa
+- name: Kansas, U.S.A.
+  service_class_basename: Kansas
+- name: Kentucky, U.S.A.
+  service_class_basename: Kentucky
+- name: Louisiana, U.S.A.
+  service_class_basename: Louisiana
+- name: Maine, U.S.A.
+  service_class_basename: Maine
+- name: Maryland, U.S.A.
+  service_class_basename: Maryland
+- name: Massachusetts, U.S.A.
+  service_class_basename: Massachusetts
+- name: Michigan, U.S.A.
+  service_class_basename: Michigan
+- name: Minnesota, U.S.A.
+  service_class_basename: Minnesota
+- name: Mississippi, U.S.A.
+  service_class_basename: Mississippi
+- name: Missouri, U.S.A.
+  service_class_basename: Missouri
+- name: Montana, U.S.A.
+  service_class_basename: Montana
+- name: Nebraska, U.S.A.
+  service_class_basename: Nebraska
+- name: Nevada, U.S.A.
+  service_class_basename: Nevada
+- name: New Hampshire, U.S.A.
+  service_class_basename: NewHampshire
+- name: New Jersey, U.S.A.
+  service_class_basename: NewJersey
+- name: New Mexico, U.S.A.
+  service_class_basename: NewMexico
+- name: New York, U.S.A.
+  service_class_basename: NewYork
+- name: North Carolina, U.S.A.
+  service_class_basename: NorthCarolina
+- name: North Dakota, U.S.A.
+  service_class_basename: NorthDakota
+- name: Ohio, U.S.A.
+  service_class_basename: Ohio
+- name: Oklahoma, U.S.A.
+  service_class_basename: Oklahoma
+- name: Oregon, U.S.A.
+  service_class_basename: Oregon
+- name: Pennsylvania, U.S.A.
+  service_class_basename: Pennsylvania
+- name: Rhode Island, U.S.A.
+  service_class_basename: RhodeIsland
+- name: South Carolina, U.S.A.
+  service_class_basename: SouthCarolina
+- name: South Dakota, U.S.A.
+  service_class_basename: SouthDakota
+- name: Tennessee, U.S.A.
+  service_class_basename: Tennessee
+- name: Texas, U.S.A.
+  service_class_basename: Texas
+- name: Utah, U.S.A.
+  service_class_basename: Utah
+- name: Vermont, U.S.A.
+  service_class_basename: Vermont
+- name: Virginia, U.S.A.
+  service_class_basename: Virginia
+- name: Washington, U.S.A.
+  service_class_basename: Washington
+- name: West Virginia, U.S.A.
+  service_class_basename: WestVirginia
+- name: Wisconsin, U.S.A.
+  service_class_basename: Wisconsin
+- name: Wyoming, U.S.A.
+  service_class_basename: Wyoming
