@@ -56,6 +56,13 @@ describe LicensePlate do
     end
   end
 
+  describe 'delegations' do
+    it do
+      is_expected.to delegate_method(:service_class_basename).to(:jurisdiction)
+        .with_prefix
+    end
+  end
+
   describe '#comments_count' do
     let(:comments) do
       instance_double(
